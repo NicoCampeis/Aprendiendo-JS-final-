@@ -1,17 +1,12 @@
 const contenedorProductos = document.getElementById('contenedor-productos')
-
-
-
 const contenedorCarrito = document.getElementById('carrito-contenedor')
-
 const botonVaciar = document.getElementById('vaciar-carrito')
-
 const contadorCarrito = document.getElementById('contadorCarrito')
-
-
 const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
+
+const botonComprar = document.getElementById('comprarTotal')
 
 let carrito = []
 
@@ -23,8 +18,37 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 botonVaciar.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Are you sure?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+        Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+        
+        )}
+    }),
+
     carrito.length = 0
     actualizarCarrito()
+})
+
+botonComprar.addEventListener(`click`, () =>{
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Compra realizada ',
+        showConfirmButton: false,
+        timer: 1500
+    })
+
+    eliminarDelCarrito()
 })
 
 
@@ -46,7 +70,7 @@ juegos.forEach((producto) => {
     boton.addEventListener('click', () => {
         
         agregarAlCarrito(producto.id)
-       
+    
     })
 })
 
