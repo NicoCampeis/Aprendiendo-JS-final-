@@ -5,7 +5,6 @@ const contadorCarrito = document.getElementById('contadorCarrito')
 const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
-
 const botonComprar = document.getElementById('comprarTotal')
 
 let carrito = []
@@ -48,11 +47,18 @@ botonComprar.addEventListener(`click`, () =>{
         timer: 1500
     })
 
-    eliminarDelCarrito()
+eliminarDelCarrito()
+
 })
 
 
-juegos.forEach((producto) => {
+// ASYNC - AWAIT - FETCH
+async function getGames(){
+    const response = await fetch("./games.json")
+    const data = await response.json()
+    console.log(data);
+
+data.forEach((producto) => {
     const div = document.createElement('div')
     div.classList.add('producto')
     div.innerHTML = `
@@ -73,7 +79,9 @@ juegos.forEach((producto) => {
     
     })
 })
+};
 
+getGames()
 
 const agregarAlCarrito = (prodId) => {
     const existe = carrito.some (prod => prod.id === prodId) 
@@ -90,7 +98,7 @@ const agregarAlCarrito = (prodId) => {
     }
     
     actualizarCarrito() 
-}
+};
 
 
 
@@ -103,6 +111,7 @@ const eliminarDelCarrito = (prodId) => {
     
     actualizarCarrito() 
     console.log(carrito)
+    eliminarDelCarrito()
 }
 
 const actualizarCarrito = () => {
