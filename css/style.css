@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: antiquewhite;
+    background-image: url("https://us.123rf.com/450wm/chuckchee/chuckchee1609/chuckchee160900005/62328446-modelo-incons%C3%BAtil-con-los-iconos-de-jugador-esquema-de-color-verde-sobre-fondo-azul.jpg?ver=6") ;
     font-family: 'Roboto', sans-serif;
 }
 img {
@@ -17,18 +17,18 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 10%;
-    box-shadow: 0px 5px 4px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 4px 3px rgba(173, 173, 173, 0.641);
     margin-bottom: 20px;
 }
 h1 {
-    color: rgb(0, 0, 0);
+    color: rgb(205, 205, 205) ;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 50px;
 }
 #boton-carrito {
     border: none;
-    color: rgb(255, 0, 60);
+    color: rgb(28, 27, 27);
     font-size: 40px;
     background-color: white;
     border-radius: 50%;
@@ -60,13 +60,13 @@ p {
     padding: 10px;
     margin: 10px;
     margin-bottom: 20px;
-    box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 6px 7px 4px rgb(113, 176, 218);
 }
 .precioProducto {
     font-weight: 700;
 }
 .boton-agregar {
-    background-color: royalblue;
+    background-color: slategray;
     color: white;
     font-size: 18px;
     font-weight: 700;
@@ -79,9 +79,12 @@ p {
 .boton-agregar:focus {
     outline: none;
 }
+.txtcolor{
+    color: aliceblue;
+}
 
 .boton-comprar {
-    background-color: royalblue;
+    background-color: slategray;
     color: white;
     font-size: 18px;
     font-weight: 700;
@@ -175,4 +178,13 @@ p {
 }
 .boton-eliminar:focus {
     outline: none;
+}
+
+.footer{
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px ;
+    
 }
