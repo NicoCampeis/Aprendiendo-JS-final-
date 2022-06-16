@@ -46,7 +46,7 @@ botonComprar.addEventListener(`click`, () => {
         showConfirmButton: false,
         timer: 1500
     })
-
+//aca encontre un error donde no se realizaba la compra.
     carrito = []
     eliminarDelCarrito()
 
@@ -98,7 +98,7 @@ const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
     const indice = carrito.indexOf(item)
     carrito.splice(indice, 1)
-
+//en esta linea tenia la funcion eliminardelcarrito y es donde se realizaba el bucle infinito. 
     actualizarCarrito()
     
 
